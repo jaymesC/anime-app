@@ -3,8 +3,8 @@ import { useQuery, gql } from "@apollo/client";
 import { useState } from "react";
 
 export const AnimeList = gql`
-query Query {
-  Page {
+query Query($page: Int) {
+  Page(page: $page) {
     media {
       siteUrl
       title {
@@ -24,9 +24,41 @@ query Query {
 `;
 
 function App() {
-  const [page, setPage] = useState (1)
+  const [page, setPage] = useState (1);
+  const {loading, error, data} = useQuery(AnimeList , {variables: { "page" : page} });
 
-  return <div></div>;
+  const NextPage = () => {
+    setPage(page + 1);
+  }
+
+  const PreviousPage = () => {
+    setPage(page - 1);
+  }
+
+  console.log(data?.Page?.media[0]);
+  if(loading) return (<h1>Loading...</h1>);
+  if(error) return (<h3>{JSON.stringify(error)}</h3>)
+
+  return (
+    <div className="container">
+      <h1>Anime List </h1>
+      <hr width="80%" />
+      {data?.Page?.media.map((anime) => (
+        <>
+          <div className="card">
+            <img src={anime.coverImage.medium} alt="coverImage" />
+            <div>
+              <h1>{anime.title.english}</h1>
+              <div className="episodes">
+                Episodes <b>{anime.episodes}</b>{" "}
+              </div>
+              <div dangerouslySetInnerHTML={{__html: anime.episodes}} />
+            </div>
+          </div>
+        </>
+      ))}
+    </div>
+  );
 }
 
 export default App;
