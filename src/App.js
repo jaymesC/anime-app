@@ -1,4 +1,4 @@
-import "./index.css";
+import "./App.css";
 import { useQuery, gql } from "@apollo/client";
 import { useState } from "react";
 
@@ -50,9 +50,9 @@ function App() {
             <div>
               <h1>{anime.title.english}</h1>
               <div className="episodes">
-                Episodes <b>{anime.episodes}</b>{" "}
+                Episodes <b>{anime.episodes}</b>
               </div>
-              <div dangerouslySetInnerHTML={{__html: anime.episodes}} />
+              <div dangerouslySetInnerHTML={{__html: anime.description}} ></div>
             </div>
           </div>
           <hr width="75%"/>
