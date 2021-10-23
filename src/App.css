@@ -6,15 +6,31 @@
     flex-direction: column
 }
 
+.spinner {
+    display: flex;
+    font-size:20rem;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+}
+
 .card {
     display: flex;
     flex-direction: row;
-    margin: 1% 5% 1% 5% 1%;
+    /* margin: 1% 5% 1% 5% 1%; */
+}
+
+.card img {
+    border: 2px solid red;
+    width: 15rem;
+    height: 15rem;
+    margin-right: 2rem;
 }
 
 .cardText {
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .episodes {

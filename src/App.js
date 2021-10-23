@@ -1,6 +1,7 @@
 import "./App.css";
 import { useQuery, gql } from "@apollo/client";
 import { useState } from "react";
+import Spinner from "react-svg-spinner";
 
 export const AnimeList = gql`
 query Query($page: Int) {
@@ -36,7 +37,11 @@ function App() {
   }
 
   console.log(data?.Page?.media[0]);
-  if(loading) return (<h1>Loading...</h1>);
+  if(loading) return (
+    <div className="spinner">
+      <Spinner className="spinner-icon"/>
+    </div>
+  );
   if(error) return (<h3>{JSON.stringify(error)}</h3>)
 
   return (
@@ -52,16 +57,16 @@ function App() {
               <div className="episodes">
                 Episodes <b>{anime.episodes}</b>
               </div>
-              <div dangerouslySetInnerHTML={{__html: anime.description}} ></div>
+              <div className="cardText" dangerouslySetInnerHTML={{__html: anime.description}} ></div>
             </div>
           </div>
-          <hr width="75%"/>
+          <hr width="100%"/>
         </>
       ))}
         <div className="buttonContainer">
           {page !== 1 && <button onClick={previousPage}>Previous Page</button>}
           <div className="pageText">{page}</div>
-          <button onclick={nextPage}>Next Page</button>
+          <button onClick={nextPage}>Next Page</button>
         </div>
     </div>
   );
