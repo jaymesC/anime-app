@@ -27,11 +27,11 @@ function App() {
   const [page, setPage] = useState (1);
   const {loading, error, data} = useQuery(AnimeList , {variables: { "page" : page} });
 
-  const NextPage = () => {
+  const nextPage = () => {
     setPage(page + 1);
   }
 
-  const PreviousPage = () => {
+  const previousPage = () => {
     setPage(page - 1);
   }
 
@@ -55,8 +55,14 @@ function App() {
               <div dangerouslySetInnerHTML={{__html: anime.episodes}} />
             </div>
           </div>
+          <hr width="75%"/>
         </>
       ))}
+        <div className="buttonContainer">
+          {page !== 1 && <button onClick={previousPage}>Previous Page</button>}
+          <div className="pageText">{page}</div>
+          <button onclick={nextPage}>Next Page</button>
+        </div>
     </div>
   );
 }
