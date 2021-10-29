@@ -3,12 +3,12 @@
     justify-self: center;
     align-items: center;
     text-align: center;
-    flex-direction: column
+    flex-direction: column;
 }
 
 .spinner {
     display: flex;
-    font-size:20rem;
+    font-size:15rem;
     justify-content: center;
     align-items: center;
     padding-top: 10rem;
@@ -30,7 +30,7 @@
 .cardText {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
 }
 
 .episodes {
