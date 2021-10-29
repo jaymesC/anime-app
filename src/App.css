@@ -1,55 +1,66 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .container {
-    display: flex;
-    justify-self: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
+  background-color: rgb(41, 39, 39);
+  color: #fff;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
 }
 
 .spinner {
-    display: flex;
-    font-size:15rem;
-    justify-content: center;
-    align-items: center;
-    padding-top: 10rem;
+  display: flex;
+  font-size: 15rem;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10rem;
 }
 
 .card {
-    display: flex;
-    flex-direction: row;
-    /* margin: 1% 5% 1% 5% 1%; */
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  /* margin: 1% 5% 1% 5% 1%; */
 }
 
 .card img {
-    border: 2px solid red;
-    width: 15rem;
-    height: 15rem;
-    margin-right: 2rem;
+  border: 2px solid red;
+  width: 15rem;
+  height: 15rem;
+  margin-right: 2rem;
 }
 
 .cardText {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 .episodes {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    margin-left: 45%;
-    margin-top: 3%;
-    margin-bottom: 3%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  margin-left: 45%;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
 
 .buttonContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .pageText {
-    margin-left: 5px;
-    margin-right: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }

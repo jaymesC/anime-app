@@ -47,7 +47,7 @@ function App() {
   return (
     <div className="container">
       <h1>Anime List </h1>
-      <hr width="80%" />
+      <hr  />
       {data?.Page?.media.map((anime) => (
         <>
           <div className="card">
