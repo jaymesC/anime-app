@@ -12,6 +12,8 @@
   align-items: center;
   text-align: center;
   flex-direction: column;
+  margin-left: 4rem;
+  margin-right: 4rem;
 }
 
 .spinner {
@@ -47,7 +49,9 @@
 .episodes {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  /* align-items: center; */
+  color:aqua;
+  font-size:24px;
   text-align: center;
   margin-left: 45%;
   margin-top: 3%;
